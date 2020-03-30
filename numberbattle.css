@@ -1,0 +1,47 @@
+#numberBody {
+    width: 80%;
+    height: 450px;
+    margin: 0 auto 0 auto;
+
+}
+
+#btnSpin {
+    background: limegreen;
+    border: black;
+    border: 3px;
+    color: black;
+}
+
+
+#compHolder{
+    position: absolute;
+    left: 30px;
+    float: left;
+}
+
+#playerHolder{
+    float: right;
+    position: absolute;
+    right: 30px;
+    top: 100px;
+
+}
+
+#computerCounter{
+    clear: both;
+    position: absolute;
+    left: 30px;
+    top: 250px;
+    float: left;
+    overflow: auto;
+}
+
+#playerCounter{
+    clear: both;
+    position: absolute;
+    right: 30px;
+    top: 250px;
+    float: right;
+    overflow: auto;
+
+}
