@@ -57,8 +57,8 @@
                     <div class="alert alert-primary" role="alert">
                         Computer
                     </div>
-                    <h5 class="card-title" id="computerWin">Wins:</h5>
-                    <h5 class="card-title" id="computerLoss">Loss:</h5>
+                    <h5 class="card-title" >Wins: <span id="compW"></span></h5>
+                    <h5 class="card-title" >Loss: <span id="compl"></span></h5>
                 </div>
             </div>
             <br>
@@ -67,8 +67,8 @@
                     <div class="alert alert-primary" role="alert">
                         Player
                     </div>
-                    <h5 class="card-title" id="playerWin">Wins:</h5>
-                    <h5 class="card-title" id="playerLoss">Loss:</h5>
+                    <h5 class="card-title" id="playerWin">Wins: <span id="playerW"></span></h5>
+                    <h5 class="card-title" id="playerLoss">Loss: <span id="playerL"></span></h5>
                 </div>
             </div>
 
@@ -76,15 +76,6 @@
             <script type="text/javascript">
 
                 $(document).ready(function () {
-
-
-
-                    // computer win and loss counter = results from spin (random output)
-                    let computerWin = 0;
-                    let computerLoss = 0;
-                    // player wina and loss counter = results from spic (random output)
-                    let playerWin = 0;
-                    let playerLoss = 0;
 
                     $("#btnSpin").on("click", function () {
                         console.log("You have clicked the spin button!");
@@ -97,21 +88,42 @@
                         let playerPick = $("#playerInput");
                         playerPick.text(playerNum);
 
-                        if (computerNum > playerNum) {
+                        var playerN = playerNum;
+                        var compN = computerNum;
+                        console.log(compN);
+                        console.log(playerN);
+                    
+                    // attempting to increase wins and loss tallies
+
+                        let computerWin = 0;
+                        let computerLoss = 0;
+                        let playerWin = 0;
+                        let playerLoss = 0;
+
+                        function comparison(){
+                        if (compN > playerN) {
                             console.log("Computer win");
                             computerWin++;
+                            playerLoss++;
+                            $("#compW").text(computerWin);
+                            $("#playerL").tecxt(playerLoss);
                             alert("One for the computer!");
                         }
 
-                        else if (computerNum < playerNum) {
+                        else if (compN < playerN) {
                             console.log("Player Win");
                             playerWin++;
+                            computerLoss++;
+                            $("#playerW").text(playerWin);
+                            $("#computerL").text(computerLoss)
                             alert("Chalk one up for you!");
                         }
                         else {
                             console.log("User Tie");
                             alert("A one in a thousand chance ... a tie");
                         };
+                        }
+
                     });
 
                 });
