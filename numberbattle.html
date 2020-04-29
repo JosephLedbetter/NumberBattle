@@ -79,39 +79,37 @@
                     $("#btnSpin").on("click", function () {
 
                         let playWinTotal = document.querySelector('#playerW').innerHTML;
-                        console.log(playWinTotal);
                         let playLossTotal = document.querySelector('#playerL').innerHTML;
-                        console.log(playLossTotal);
                         let compWinTotal = document.querySelector('#compW').innerHTML;
-                        console.log(compWinTotal);
                         let compLossTotal = document.querySelector('#compL').innerHTML;
-                        console.log(compLossTotal)
 
-                        console.log("You have clicked the spin button!");
-
+                        /*RANDOM GENERATED NUMBER FOR THE COMPUTER SIDE*/
                         const computerNum = Math.floor((Math.random() * 1000) - 1);
                         let computerPick = $("#computerInput");
                         computerPick.text(computerNum);
 
+                        /*RANDOM NUMBER GENERATED FOR THE PLAYER*/
                         const playerNum = Math.floor((Math.random() * 1000) - 1);
                         let playerPick = $("#playerInput");
                         playerPick.text(playerNum);
 
+                        // CATCHING THE VALUES FOR EACH PLAYER
                         var playerN = playerNum;
                         var compN = computerNum;
-                        console.log(compN);
-                        console.log(playerN);
 
+                        // COMPARISON FOR THE PLAYER TOTALS
+                        // player win
                         if(playerN > compN){
                             console.log('Player Wins!');
-                            playWinTotal = + 1;
-
+                            playWinTotal = playWinTotal ++;
+                            console.log(playWinTotal)
+                        // computer win
                         } else {
                             console.log('Computer Wins')
-                            compWinTotal = + 1;
+                            compWinTotal = compWinTotal ++;
+                            console.log(compWinTotal);
                         }
                     })
-            
                 });
             </script>
 
