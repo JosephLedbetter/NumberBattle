@@ -37,22 +37,24 @@ function playerW(){
 
 
 
-if (computerNum > playerNum) {
-        console.log("Computer win");
-    }
-
-    else if (computerNum < playerNum) {
-        console.log("Player Win");
-        playerWins++;
-        computerLoss++
-        $("#cWin").text(playerWins);
-        $("#pLoss").text(computerLoss);
-        console.log(playerWin);
-        console.log(computerLoss)
-    }
-    else {
-        console.log("User Tie");
-    }
-}
-
 })
+
+
+
+// if (computerNum > playerNum) {
+//         console.log("Computer win");
+//     }
+
+//     else if (computerNum < playerNum) {
+//         console.log("Player Win");
+//         playerWins++;
+//         computerLoss++
+//         $("#cWin").text(playerWins);
+//         $("#pLoss").text(computerLoss);
+//         console.log(playerWin);
+//         console.log(computerLoss)
+//     }
+//     else {
+//         console.log("User Tie");
+//     }
+// }
