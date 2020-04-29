@@ -1,11 +1,5 @@
 
-                $(document).ready(function () {
                     $("#btnSpin").on("click", function () {
-
-                        let playWinTotal = 0;
-                        let playLossTotal = 0;
-                        let compWinTotal = 0;
-                        let compLossTotal = 0;
 
                         /*RANDOM GENERATED NUMBER FOR THE COMPUTER SIDE*/
                         const computerNum = Math.floor((Math.random() * 1000) - 1);
@@ -17,30 +11,23 @@
                         let playerPick = $("#playerInput");
                         playerPick.text(playerNum);
 
-                        // CATCHING THE VALUES FOR EACH PLAYER
-                        var playerN = playerNum;
-                        var compN = computerNum;
+                        let playerScore = 0;
+                        let compScore = 0;
 
                         // COMPARISON FOR THE PLAYER TOTALS
                         // player win
-                        if(playerN > compN){
-                            console.log(++playWinTotal);
-                            console.log(++compLossTotal);
-                            console.log(playWinTotal);
-                            console.log(compLossTotal);
+                        if(playerNum > computerNum){
                             console.log('Player Wins');
                             console.log('Computer Loses')
+                           
+                        }
                         // computer win
-                        } else if (compN > playerN) {
-                           console.log(++compWinTotal);
-                           console.log(++playLossTotal);
-                           console.log(compWinTotal);
-                           console.log(playLossTotal)
+                        else if (computerNum > playerNum) {
                             console.log('Computer Wins');
-                            console.log('Player Loses')
+                            console.log('Player Loses');
+                           
                         }
                          else {
                             console.log('Players tied')
                         }
-                    })
-                });
+                    });
