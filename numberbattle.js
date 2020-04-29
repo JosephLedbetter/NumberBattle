@@ -1,60 +1,46 @@
-$(document).ready(function() {
 
-    $("#btnSpin").on("click", function(){
-        console.log("You have clicked the spin button!");
+                $(document).ready(function () {
+                    $("#btnSpin").on("click", function () {
 
-    const computerNum = Math.floor((Math.random() * 1000 ) - 1);
-    let computerPick = $("#computerInput");
-    computerPick.text(computerNum);
+                        let playWinTotal = 0;
+                        let playLossTotal = 0;
+                        let compWinTotal = 0;
+                        let compLossTotal = 0;
 
-    const playerNum = Math.floor((Math.random() * 1000 ) - 1);
-    let playerPick = $("#playerInput");
-    playerPick.text(playerNum);
-    },
+                        /*RANDOM GENERATED NUMBER FOR THE COMPUTER SIDE*/
+                        const computerNum = Math.floor((Math.random() * 1000) - 1);
+                        let computerPick = $("#computerInput");
+                        computerPick.text(computerNum);
 
-// computer win and loss' counter = results from spin (random output)
-    let computerWins = 0;
-    let computerLoss = 0;
+                        /*RANDOM NUMBER GENERATED FOR THE PLAYER*/
+                        const playerNum = Math.floor((Math.random() * 1000) - 1);
+                        let playerPick = $("#playerInput");
+                        playerPick.text(playerNum);
 
-// player wins and loss' counter = results from spic (random output)
-    let playerWins = 0;
-    let playerLoss = 0;
+                        // CATCHING THE VALUES FOR EACH PLAYER
+                        var playerN = playerNum;
+                        var compN = computerNum;
 
-// computer vs player score comparisons
-function computerW(){
-    computerWins++;
-    $("#cWin").text(computerWins);
-    $("#pLoss").text(playerLoss);
-    console.log(computerWins)
-}
-
-function playerW(){
-    playerWins++;
-    $("#pWin").text(playerWins);
-    $("#cLoss").text(computerLoss)
-    console.log(playerWins)
-}
-
-
-
-})
-
-
-
-// if (computerNum > playerNum) {
-//         console.log("Computer win");
-//     }
-
-//     else if (computerNum < playerNum) {
-//         console.log("Player Win");
-//         playerWins++;
-//         computerLoss++
-//         $("#cWin").text(playerWins);
-//         $("#pLoss").text(computerLoss);
-//         console.log(playerWin);
-//         console.log(computerLoss)
-//     }
-//     else {
-//         console.log("User Tie");
-//     }
-// }
+                        // COMPARISON FOR THE PLAYER TOTALS
+                        // player win
+                        if(playerN > compN){
+                            console.log(++playWinTotal);
+                            console.log(++compLossTotal);
+                            console.log(playWinTotal);
+                            console.log(compLossTotal);
+                            console.log('Player Wins');
+                            console.log('Computer Loses')
+                        // computer win
+                        } else if (compN > playerN) {
+                           console.log(++compWinTotal);
+                           console.log(++playLossTotal);
+                           console.log(compWinTotal);
+                           console.log(playLossTotal)
+                            console.log('Computer Wins');
+                            console.log('Player Loses')
+                        }
+                         else {
+                            console.log('Players tied')
+                        }
+                    })
+                });

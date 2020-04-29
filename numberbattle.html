@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="numberbattle.css">
 
     <title>Number Battle</title>
@@ -73,46 +71,9 @@
             </div>
 
             <!-- Javascript and jQuery entered below for the above NumberBattle -->
-            <script type="text/javascript">
-
-                $(document).ready(function () {
-                    $("#btnSpin").on("click", function () {
-
-                        let playWinTotal = document.querySelector('#playerW').innerHTML;
-                        let playLossTotal = document.querySelector('#playerL').innerHTML;
-                        let compWinTotal = document.querySelector('#compW').innerHTML;
-                        let compLossTotal = document.querySelector('#compL').innerHTML;
-
-                        /*RANDOM GENERATED NUMBER FOR THE COMPUTER SIDE*/
-                        const computerNum = Math.floor((Math.random() * 1000) - 1);
-                        let computerPick = $("#computerInput");
-                        computerPick.text(computerNum);
-
-                        /*RANDOM NUMBER GENERATED FOR THE PLAYER*/
-                        const playerNum = Math.floor((Math.random() * 1000) - 1);
-                        let playerPick = $("#playerInput");
-                        playerPick.text(playerNum);
-
-                        // CATCHING THE VALUES FOR EACH PLAYER
-                        var playerN = playerNum;
-                        var compN = computerNum;
-
-                        // COMPARISON FOR THE PLAYER TOTALS
-                        // player win
-                        if(playerN > compN){
-                            console.log('Player Wins!');
-                            playWinTotal = playWinTotal ++;
-                            console.log(playWinTotal)
-                        // computer win
-                        } else {
-                            console.log('Computer Wins')
-                            compWinTotal = compWinTotal ++;
-                            console.log(compWinTotal);
-                        }
-                    })
-                });
-            </script>
-
+            <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            <script src="numberbattle.js"></script>
 
 </body>
 
